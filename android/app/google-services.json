@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "77767924449",
+    "project_id": "chargerx-vision",
+    "storage_bucket": "chargerx-vision.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77767924449:android:ae42bbdeda861dadadb5a0",
+        "android_client_info": {
+          "package_name": "com.chargexvision.chargex_vision"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlQEOYISJeQS_1OnKabAmGQhb5xTVGphY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+name: chargex_vision
+description: ChargeX Vision Flutter app - AI-powered EV charger inspection.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.10.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI and Design
+  cupertino_icons: ^1.0.8
+
+  # Navigation
+  go_router: ^17.5.0
+
+  # State Management
+  flutter_riverpod: ^3.3.2
+
+  # Firebase
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.10.0
+
+  # HTTP
+  dio: ^5.11.0
+  mobile_scanner: ^7.4.2
+  image_picker: ^1.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
