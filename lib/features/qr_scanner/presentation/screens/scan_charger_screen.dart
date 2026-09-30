@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../../../chargers/domain/models/charger_model.dart';
+import '../../../chargers/presentation/providers/selected_charger_provider.dart';
 import 'package:go_router/go_router.dart';
 
-class ScanChargerScreen extends StatefulWidget {
+class ScanChargerScreen extends ConsumerStatefulWidget {
   const ScanChargerScreen({super.key});
 
   @override
-  State<ScanChargerScreen> createState() => _ScanChargerScreenState();
+  ConsumerState<ScanChargerScreen> createState() => _ScanChargerScreenState();
 }
 
-class _ScanChargerScreenState extends State<ScanChargerScreen> {
+class _ScanChargerScreenState extends ConsumerState<ScanChargerScreen> {
   final MobileScannerController _scannerController = MobileScannerController(
     detectionSpeed: DetectionSpeed.noDuplicates,
     facing: CameraFacing.back,
@@ -209,6 +211,9 @@ class _ScanChargerScreenState extends State<ScanChargerScreen> {
           FilledButton.icon(
             onPressed: () {
               if (_identifiedCharger!.isRecognized) {
+                ref
+                    .read(selectedChargerProvider.notifier)
+                    .selectCharger(_identifiedCharger);
                 context.go('/digital-twin', extra: _identifiedCharger);
               } else {
                 _resetScanner();

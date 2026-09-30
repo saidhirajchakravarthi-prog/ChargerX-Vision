@@ -1,6 +1,6 @@
 // lib/features/digital_twin/data/repositories/digital_twin_repository.dart
 import 'package:dio/dio.dart';
-import '../domain/models/digital_twin_model.dart';
+import '../../domain/models/digital_twin_model.dart';
 import '../../../chargers/domain/models/charger_model.dart';
 
 class DigitalTwinRepository {

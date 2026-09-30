@@ -15,7 +15,9 @@ import '../../features/digital_twin/presentation/screens/digital_twin_screen.dar
 import '../../features/health/presentation/screens/health_screen.dart';
 import '../../features/history/presentation/screens/history_screen.dart';
 import '../../features/inspection/presentation/screens/inspection_screen.dart';
+import '../../features/inspection/presentation/screens/component_inspection_screen.dart';
 import '../../features/inspection/presentation/screens/results_screen.dart';
+import '../../features/digital_twin/domain/models/digital_twin_component.dart';
 import '../../features/maintenance/presentation/screens/maintenance_screen.dart';
 import '../../features/reports/presentation/screens/reports_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
@@ -120,6 +122,14 @@ class AppRouter {
             path: '/inspection',
             name: 'inspection',
             builder: (context, state) => const InspectionScreen(),
+          ),
+          GoRoute(
+            path: '/component-inspection',
+            name: 'component-inspection',
+            builder: (context, state) {
+              final comp = state.extra as DigitalTwinComponent;
+              return ComponentInspectionScreen(component: comp);
+            },
           ),
           GoRoute(
             path: '/results',

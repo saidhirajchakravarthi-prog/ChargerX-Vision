@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import '../providers/ai_recognition_provider.dart';
 import '../../domain/models/ai_recognition_result.dart';
 import '../../../chargers/domain/models/charger_model.dart';
+import '../../../chargers/presentation/providers/selected_charger_provider.dart';
 
 class AiRecognitionScreen extends ConsumerStatefulWidget {
   const AiRecognitionScreen({super.key});
@@ -99,6 +100,9 @@ class _AiRecognitionScreenState extends ConsumerState<AiRecognitionScreen> {
                       model: state.model,
                       type: state.type,
                     );
+                    ref
+                        .read(selectedChargerProvider.notifier)
+                        .selectCharger(charger);
                     context.go('/digital-twin', extra: charger);
                   },
                   icon: const Icon(Icons.check_circle_outline_rounded),
